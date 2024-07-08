@@ -4,7 +4,7 @@
 
 - Source: [LeetCode](https://leetcode.com/problems/two-sum/)
 - Difficulty: **Easy**
-- Languages Completed: Python, C#
+- Languages Completed: Python3, C#
 - Synopsis
   - Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`
   - You may assume that each input would have ***exactly one solution***, and you may not use the *same* element twice
@@ -18,8 +18,20 @@
 
 ### Initial Thoughts
 
-### `Python` Solution
+### `Python3` Solution
+
+**Solution Status:** `Passed`\
+**Solution Runtime:** `O(N)`\
+**Completion Date:** `06\06\2024`\
+**`Python3` Specific Notes:**
+> Notes on any special considerations taken into account when writing solution in this specific language
 
 ### `C#` Solution
+
+**Solution Status:** `Passed`\
+**Solution Runtime:** `O(N)`\
+**Completion Date:** `06\06\2024`\
+**`C#` Specific Notes:**
+> Notes on any special considerations taken into account when writing solution in this specific language
 
 ### Closing Thoughts
