@@ -7,7 +7,8 @@
 - Languages Completed: Python3, C#
 - Synopsis
   - Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?
-  - Hints: Page 192 #44, #117, #132
+  - Hints: #44, #117, #132
+  - Solution: Page 192
 
 ## Challenge Commentary
 

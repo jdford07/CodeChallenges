@@ -7,7 +7,8 @@
 - Languages Completed: Python3, C#
 - Synopsis
   - Given two strings, write a method to decide if one is a permutation of the other.
-  - Hints: Page 193, #1, #84, #122, #131
+  - Hints: #1, #84, #122, #131
+  - Solution: Page 193
 
 ## Challenge Commentary
 
@@ -43,7 +44,7 @@ My third thought is, thinking about the sorting solution from Q1.1
 ### `Python3` Solution
 
 **Solution Status:** `Passed`\
-**Solution Runtime:** `O(Nlogn)`\
+**Solution Runtime:** `O(N)`\
 **Completion Date:** `07\07\2024`\
 **`Python3` Specific Notes:**
 > In order to specifically sort a string alphabetically you must pass the string into the sorted() method then join on a null "" character: `"".join(sorted(string))`\
@@ -70,3 +71,4 @@ Reading the book solution:
   - This solution takes into account a more creative thought process, to me, where sorting the array did not come to me as my first thought
     - This creative thinking can be more beneficial in later/more indepth exercises
     - I find more value in this way of thinking as it feels more out-of-the-box which I believe can help in striving to eliminate all non-optimal solutions and overall finding the most optimal solution
+  
