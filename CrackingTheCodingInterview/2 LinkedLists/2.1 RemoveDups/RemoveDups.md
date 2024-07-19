@@ -26,10 +26,24 @@
 ### `Python3` Solution
 
 **Solution Status:** `Passed`\
-**Solution Runtime:** `O()`\
-**Completion Date:** `07\14\2024`\
+**Solution Runtime:** `O(N)`\
+**Completion Date:** `07\18\2024`\
 **`Python3` Specific Notes:**
+> I created a library (LinkedListLib) to initialize a custom singly linked list for solution testing.
 >
+> To solve removing dups, I first create a set to hold all unique characters encountered. Then, I initialize a currentNode variable set to the input Linked Lists head. Lastly, I need to keep track of the previous node, so I initialize a prevNode variable set to 'None'. The prevNode variable will be set to the currentNode-1 when iterating through the input linked list
+> 
+> I use a while loop to iterate over the linked list, escaping when the currentNode is 'None'
+> 
+> When a unique char is found:
+> - The char gets added to the set
+> - prevNode is set to currentNode
+> - currentNode is set to currentNode.next (this specifically continues the iteration)
+>
+> When a duplicate char is found:
+> - The prevNode.Next is set to currentNode.next
+>   - This skips the currentNode by changing the prevNode.next from the currentNode to the next node's memory location
+>   - In a lower level language, the Node memory would be cleaned up at the same time
 
 ### `C#` Solution
 
@@ -41,6 +55,16 @@
 
 ### Closing Thoughts
 
+My solution is the exact same as the book's solution. 
+
+The solution for not using a buffer is referencing the inability to use a hashtable/set
+
 Reading the solution, the book points out
 
--
+- Use the 'runner' technique to iterate over the linked list 
+  - This uses a currentNode and then a runnerNode
+  - You iterate over the linkedList as you normally would, however
+    - For each currentNode.data,
+      - use the runnerNode to iterate over all following Nodes, comparing currentNode.data to runnerNode.data
+      - If the currentNode.data == runnerNode.data, remove the runnerNode and continue iterating
+  - This solution results in O(N^2) since you have to iterate over the linked list twice, however it's O(1) space complexity
