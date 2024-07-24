@@ -19,6 +19,10 @@ class SinglyLinkedList:
             self.head = newNode
 
 
+def createNode(data):
+    return Node(data)
+
+
 def createSinglyLinkedList(data):
     singlyLinkedList = SinglyLinkedList()
 
