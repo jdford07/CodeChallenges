@@ -45,6 +45,10 @@
 > We can't simply iterate through the forward linked lists positively because if you have 4999 + 2999 the result would be 7998 ((4+2+1), (9+9+1), (9+9+1), (9+9)). It would be impossible with a singly linked list to effectively look more than 1 node back to handle carrying the overflow 1.
 >
 > Unless, we did 1 pass through the lists and stored the addition result in the first linked list node. Then performed a 2nd pass, where the carry is handled by checking the currentNode.next.data value. We can do this because there's no limit on the node.Data that requires the stored digit be singular, only that the returned node.data value is singular. This would be O(2N) which is much better than O((N-1)!+N)
+>
+> Revisiting the reversal of a singly linked list, the above is overly complicated. You can simply iterate through the linked list positively, create a new linked list and insert each node at the head of the new linked list to reverse the original linked list which would be an O(N) time and splace complexity. O(N) time for the iteration and O(N) space since no new nodes were created
+>
+> To effectively solve the follow-up without reversing the list, since the 2 pass outlined above is not valid, you need to use recursion as it gives you the ability to go to the tail node then from the tail back to the head node. During the going back to the head node from the tail, you can add the carry appropriately
 
 ### `Python3` Solution
 
@@ -78,7 +82,7 @@
 >       - This prevents us from having to create dummy nodes for the length of first linked list
 >     - If it is, we move to the next node
 > For the FOLLOWUP:
->
+> - Refer to book solution
 
 ### `C#` Solution
 
@@ -92,4 +96,21 @@
 
 Reading the solution, the book points out
 
--
+- The more optimal initial solution uses recursion
+  - Overall I should try to use recursion more as I didn't even consider a recursive solution
+  - My solution is similar in approach but does not use recursion
+- For the follow-up, I did NOT pad the smaller linked list with 0's when I should have
+  - I had considered this for the initial question by thoughtfully choosing not to append 0's to the smaller list
+  - For the follow-up arithmetic, the padded 0s are crucial as you can't overwrite the value of node as I do in the initial question
+- Both solutions create a new node when needed, I considered this but did not implement it since it felt unecessary and I would question the interviewer if it was required beyond verbally considering
+- For the follow-up, the solution is completely different from mine
+  - She implemented a class to keep track of the node and if a carry is required
+    - This elemenates my necessity to iterate over the list a 2nd time
+  - She created a new list and inserted each node at the head
+    - I did the addition inplace
+- Overall, my inplace arithmetic doesn't take advantage of the movability linked list nodes have as it's completely unecessary to do something in-place with a linked list
+  - The approach is too focused on arrays/lists
+- For the follow-up solution, I read the book solution after failing to implement my own recursive solution
+  - I got tripped up on handling the wrapper class for the carry
+  - The recursion itself wasn't too difficult to conceptualize/implement but the carry class was
+  - In an interview, I would reverse the list and be done with it
