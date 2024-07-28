@@ -30,3 +30,14 @@ def createSinglyLinkedList(data):
         singlyLinkedList.append(Node(item))
 
     return singlyLinkedList
+
+
+def appendListToListTail(originalList, listToAppend):
+    originalList = originalList.head
+
+    while originalList.next:
+        originalList = originalList.next
+
+    originalList.next = listToAppend.head
+
+    return originalList
